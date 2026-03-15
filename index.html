@@ -3,76 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مقوات أبو هاشم - سوق الفكيكة</title>
+    <title>مقوات أبو هاشم - جودة تبيض الوجه</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            margin: 0; padding: 0; font-family: 'Arial', sans-serif;
-            background: #001a00; color: white; text-align: center;
-        }
-        .container {
-            padding: 20px; max-width: 500px; margin: auto;
-        }
-        .header {
-            background: linear-gradient(rgba(0,40,0,0.8), rgba(0,40,0,0.9)), url('qat1.jpg');
-            background-size: cover; padding: 40px 10px; border-bottom: 4px solid #4caf50;
-            border-radius: 0 0 30px 30px;
-        }
-        h1 { font-size: 35px; color: #8bc34a; margin: 10px 0; }
-        .market-tag { background: #ffd700; color: #000; padding: 5px 15px; border-radius: 50px; font-weight: bold; display: inline-block; }
+        :root { --primary-green: #1b5e20; --light-green: #2ecc71; --bg-gray: #f8f9fa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-gray); margin: 0; padding: 0; }
         
-        .info-box {
-            background: rgba(255,255,255,0.05); margin: 20px 10px; padding: 20px;
-            border-radius: 20px; border: 1px solid #333; line-height: 1.8;
-        }
-        .highlight { color: #8bc34a; font-weight: bold; font-size: 22px; }
+        /* الهيدر */
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('image_11.png'); 
+                height: 350px; background-size: cover; background-position: center; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+        
+        /* قسم معرض الصور (مثل نظام مكتب إنجاز) */
+        .container { padding: 20px; max-width: 1000px; margin: auto; }
+        .section-title { color: var(--primary-green); border-right: 6px solid var(--primary-green); padding-right: 15px; margin: 30px 0 20px; font-size: 24px; }
+        
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        
+        /* بطاقة النوع (مثل خانة المهن) */
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; text-align: center; border-bottom: 4px solid var(--primary-green); }
+        .card .img-container { width: 100%; height: 250px; background-color: white; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .card img { max-width: 90%; max-height: 90%; object-fit: contain; }
+        .card h3 { margin: 15px 0 5px; color: var(--primary-green); }
+        .price-tag { background: #f1f8e9; color: var(--primary-green); font-weight: bold; padding: 10px; display: block; border-top: 1px solid #e0e0e0; }
 
-        .btn {
-            display: flex; align-items: center; justify-content: center;
-            padding: 18px; margin: 15px 10px; border-radius: 15px;
-            text-decoration: none; font-weight: bold; font-size: 22px; transition: 0.3s;
-        }
-        .whatsapp { background: #25d366; color: white; }
-        .call { background: white; color: black; }
-        
-        .gallery {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px;
-        }
-        .gallery img {
-            width: 100%; height: 150px; object-fit: cover; border-radius: 15px; border: 2px solid #4caf50;
-        }
-        .footer { padding: 30px; opacity: 0.6; font-size: 14px; }
+        /* أزرار التواصل */
+        .contact-box { background: var(--primary-green); color: white; border-radius: 20px; padding: 30px; text-align: center; margin-top: 40px; }
+        .btn { display: inline-block; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; margin: 10px; font-size: 18px; transition: 0.3s; cursor: pointer; border: none; }
+        .btn-whatsapp { background-color: #25d366; color: white; }
+        .btn-call { background-color: white; color: var(--primary-green); }
+
+        /* الزر العائم */
+        .floating-wa { position: fixed; bottom: 20px; left: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>أبو هاشم لجميع وأجود القات</h1>
-        <div class="market-tag">📍 سوق الفكيكة</div>
+    <div class="hero">
+        <h1 style="font-size: 35px; margin-bottom: 10px;">مقوات أبو هاشم 🌿</h1>
+        <p>قطفة اليوم.. طازج ومنظف وجاهز للكيف</p>
     </div>
 
     <div class="container">
-        <div class="info-box">
-            <span class="highlight">حياكم الله جميعاً</span><br>
-            يوجد لدينا أجود أنواع القات اليمني:<br>
-            <b style="color: #ffd700;">(جمم - روس - عمري)</b><br>
-            قطفة يومها، نظيف ومرتب وشيء يبيض الوجه للعيد وكل المناسبات.
+        <h2 class="section-title">معرض الأنواع (صور حقيقية)</h2>
+        
+        <div class="grid-container">
+            <div class="card">
+                <div class="img-container">
+                    <img src="image_9.png" alt="قات روس - أبو هاشم">
+                </div>
+                <h3>قات روس (لوكس)</h3>
+                <div class="price-tag">السعر: حسب قطفة اليوم</div>
+            </div>
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="image_11.png" alt="قات ماوية - أبو هاشم">
+                </div>
+                <h3>قات ماوية (درجة أولى)</h3>
+                <div class="price-tag">السعر: خيارات متنوعة</div>
+            </div>
         </div>
 
-        <a href="https://wa.me/967734071766" class="btn whatsapp">💬 طلب عبر الواتساب</a>
-        <a href="tel:734071766" class="btn call">📞 إتصال مباشر</a>
-
-        <h2 style="color: #8bc34a; margin-top: 30px;">📸 معرض الصور</h2>
-        <div class="gallery">
-            <img src="qat1.jpg" alt="قات">
-            <img src="qat2.jpg" alt="قات">
-            <img src="qat3.jpg" alt="قات">
-            <img src="qat4.jpg" alt="قات">
-        </div>
-
-        <div class="footer">
-            تصميم خاص لـ مقوات أبو هاشم © 2026
+        <div class="contact-box">
+            <h2>هل لديك طلبية خاصة؟</h2>
+            <p>لا تشيل هم.. تواصل معنا ونوصله لك لمكانك</p>
+            <a href="https://wa.me/967717741860?text=أهلاً%20أبو%20هاشم،%20أشتي%20أطلب%20قات" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> طلب عبر واتساب
+            </a>
+            <a href="tel:967717741860" class="btn btn-call">
+                <i class="fas fa-phone-alt"></i> إتصال مباشر
+            </a>
         </div>
     </div>
+
+    <a href="https://wa.me/967717741860" class="floating-wa">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
